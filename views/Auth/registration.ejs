@@ -1,0 +1,55 @@
+<div class="container">
+    <section class="section min-vh-100 mt-4 d-flex flex-column align-items-center justify-content-center">
+        <div class="container">
+            <div class="row justify-content-end">
+                <div class="col-lg-4 col-md-6 col-sm-8 d-flex flex-column align-items-center justify-content-center">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <div class="pt-4 pb-2 mb-3">
+                                <h5 class="card-title text-center pb-0 fs-4 fw-bold">Inscription</h5>
+                            </div>
+                            <div id="register-alert" class="col-12 my-3 norrechel-alert bg-danger text-white text-center p-2">
+                                Wrong e-mail or password
+                              </div>
+                            <form action="/register" method="post" class="row g-3 form needs-validation registration-form" novalidate autocomplete="off">
+                                
+                                <div class="col-12">
+                                    <label for="name">Nom</label>
+                                    <input type="text" name="name" class="form-control form-control-sm shadow-none" id="name" placeholder="">
+                                    <div class="invalid-feedback">Please enter a valid Name!</div>
+                                </div>
+                                <div class="col-12">
+                                    <label for="email">Address email</label>
+                                    <input type="email" name="email" class="form-control form-control-sm shadow-none" id="email" placeholder="">
+                                    <div class="invalid-feedback">Please enter a valid email address!</div>
+                                </div>
+                                <div class="col-12 mb-4">
+                                    <label for="password">Password</label>
+                                    <input type="password" class="form-control form-control-sm  shadow-none" name="password" id="password" >
+                                    <div class="form-text text-secondary text-muted d-none">
+                                        Your password must be 8-20 characters long, contain letters, and must not contain
+                                        spaces, special characters, or emoji.
+                                    </div>
+                                    <div class="invalid-feedback">Please enter your password!</div>
+                                </div>
+                                <div class="col-12">
+                                    <button id="register-btn" class="btn btn-sm w-100" name="submit" type="submit">S'inscrire</button>
+                                    <button class="btn btn-sm w-100 d-none loading-btn" type="button" disabled>
+                                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                        <span class="">Loading...</span>
+                                    </button>
+                                </div>
+                                <!-- <hr class="divider"> -->
+                                <div class="col-12">
+                                    <p>Vous avez déjà un compte? </br> <a class="" href="/login">Se connecter</a></p>
+                                </div>
+                                
+                            </form>
+                        </div>
+                    </div>
+                </div>  
+            </div>          
+        </div>
+
+    </section>
+</div>

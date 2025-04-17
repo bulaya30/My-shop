@@ -1,0 +1,96 @@
+  <div id="item-main">
+      <div class="container justify-content-center pt-3">
+        <!-- item list contents -->
+        <div class="row">
+          <div class="col-12  mb-2 norrechel-alert bg-success text-white text-center p-2 "> 
+            Cart added successfully            
+          </div>
+          <div class="col-md-8 col-sm-12 me-3">
+            <div class="row bg-white p-4 shadow-sm mb-3">
+              <div class="item-details-card mb-3 ">
+                <div class="row g-0">
+                  <div class="col-md-4 detail-image-container items-list">
+                    <img src=".<%=item.path%><%-item.image%>" class="img-card-top" alt="">
+                  </div>
+                  <div class="col-md-8 ">
+                    <div class="card-body items-list card-items-body ms-3">
+                      <div class="item-list-name">
+                        <h2 class="text-lead item-price product-name text-center ms-2 mt-3"><%= item.name %></h2>
+                        <p class="justify-content-end text-end product-id d-none ms-3 mt-3 text-warning"><%= item.id %></p>
+                        <p class="justify-content-end text-end ms-3 mt-3 text-warning"><i class="bi bi-heart"></i></p>
+                      </div>
+                      <p class="mt-3 mb-3 item-details"><%= item.description %></p>
+                      <h3 class="text-lead h5 item-price ms-2">USD <%= item.price %></h3>
+                      <div class="mt-3 ">
+                        <form class="row" id="cart-form">
+                          <div class="col-md-3 col-sm-12 px-0 py-1">
+                            
+                            <div class="input-group mb-3">
+                              <input type="hidden" name="user" value="<% if (user) {%><%= user.email %><% }%>">
+                              <input type="hidden" name="item" value="<%= item._id %>">
+                              <button class="btn item-btn-quantity btn-sm substract-btn" type="button" disabled>-</button>
+                              <input type="text" name="quantity" class="quantity-input disabled" disabled value="1" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                              <button type="button" class="btn item-btn-quantity btn-sm add-btn">+</button>
+                            </div>
+                          </div>                          
+                          <div class="col-md-4 col-sm-12 p-0">
+                            <button type="submit" class="cart-btn item-detail-cart-btn btn btn-sm" id="add-to-cart"><i class="ri-shopping-basket-2-fill me-1"></i>Mettre au Pagné</button>
+                            </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row justify-content-center mb-3 bg-white shadow-sm">
+              <div class="item-specification ">
+                <h6>Plus de Details</h6>
+              </div>
+              <hr class="divider">
+              <div class="details-info">
+                <p class="item-details"><%= item.details %></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-12">
+            <div class="row mb-3 shadow-sm bg-white">
+              <div class="item-delivery-info">
+                <h6 class="text-lead fw-bold">Livraison</h6>
+              </div>
+              <hr class="divider">
+              <div class="details-info">
+                <p>Le délai de la livraison commence à compter du jour ou votre commande est approuvé. <br>
+                  La livraison prend 14 jours pour les articles/produits exportés de l'exterieur. <br>
+                  Une fois l'article/le produit pret pour la livrason, vous serez contacter par téléphone pour 
+                  venir le(s) recuperer dans depot. <br>
+                  On est ouvert du Lundi-Samedi (de 8h00 à 17h30), l'/les article(s)/produit(s) est/seront gardé 
+                  dans notre dépot pour une semaine seulement, si vous ne venez pas le recuperer, la commande sera 
+                  annulé
+                </p>
+              </div>
+            </div>
+            <div class="row mb-2 shadow-sm bg-white">
+              <div class="item-delivery-location">
+                <h6 class="text-lead fw-bold">contact</h6>
+              </div>
+              <hr class="divider">
+              <div class="details-info">
+                <p> <i class="bi bi-geo-alt-fill pe-3"></i>Durba, Malemba tout près de l'hoptial CHK</p>
+                <p><i class="bi bi-telephone-fill pe-3"></i>(+243) 820162580, 824468859</p>
+                <p><i class="bi bi-whatsapp pe-3"></i>(+243) 820162580/(+256) 784306898</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="card-res" aria-labelledby="responseLabel" aria-hidden="true">
+        <div class="modal-dialog p-0">
+          <div class="modal-content text-white text-center m-auto p-0">
+            <div class="modal-body p-0">
+              <p class="mt-4"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

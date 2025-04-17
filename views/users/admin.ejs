@@ -1,0 +1,912 @@
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav" role="tablist">
+
+      <li class="nav-item">
+        <a class="nav-link collapsed active" href="" data-bs-toggle="tab" data-bs-target="#nav-home">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#items" data-bs-toggle="tab" href="">
+          <i class="bi bi-menu-button-wide"></i><span>Items</span>
+        </a>
+      </li><!-- End Components Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#orders" data-bs-toggle="tab" href="">
+          <i class="bi bi-receipt-cutoff"></i><span>Orders</span> </a>
+      </li><!-- End Orders Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#new-resources" data-bs-toggle="tab" href="">
+          <i class="bi bi-plus-circle"></i><span>Add new Resource</span> </a>
+      </li><!-- End add Nav -->
+      <li class="nav-heading">Account</li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#profile" data-bs-toggle="tab" href="">
+          <i class="bi bi-person"></i>
+          <span>Profile</span>
+        </a>
+      </li><!-- End Profile Page Nav -->
+    </ul>
+
+  </aside><!-- End Sidebar-->
+  <main id="main" class="main">
+    <div class="tab-content" id="tabContent">
+      <div class="tab-pane fade show active" id="nav-home">
+        <div class="pagetitle">
+        <nav>
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/profile">Home</a></li>
+            <li class="breadcrumb-item active">Dashboard</li>
+          </ol>
+        </nav>
+      </div><!-- End Page Title -->
+      <section class="section dashboard">
+        <div class="row">
+          <!-- Left side columns -->
+          <div class="col-lg-12">
+            <div class="row">
+              <!-- Sales Card -->
+              <div class="col-xxl-6 col-md-6 col-sm-12 mb-3">
+                <div class="card info-card sales-card">
+
+                  <div class="filter">
+                    <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                      <li class="dropdown-header text-start">
+                        <h6>Filter</h6>
+                      </li>
+
+                      <li><a class="dropdown-item" href="#">Today</a></li>
+                      <li><a class="dropdown-item" href="#">This Month</a></li>
+                      <li><a class="dropdown-item" href="#">This Year</a></li>
+                    </ul>
+                  </div>
+
+                  <div class="card-body">
+                    <h5 class="card-title">Orders <span>| Today</span></h5>
+
+                    <div class="d-flex align-items-center">
+                      <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                        <i class="bi bi-cart"></i>
+                      </div>
+                      <div class="ps-3 sales-info">
+                        <h6>0</h6>
+                        <span class="text-success small pt-1 fw-bold">0%</span> <span class="text-muted small pt-2 ps-1">increase</span>
+
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div><!-- End Sales Card -->
+
+              <!-- Customers Card -->
+              <div class="col-xxl-6 col-xl-6 col-sm-12">
+
+                <div class="card info-card customers-card">
+
+                  <div class="filter">
+                    <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                      <li class="dropdown-header text-start">
+                        <h6>Filter</h6>
+                      </li>
+
+                      <li><a class="dropdown-item" href="#">Today</a></li>
+                      <li><a class="dropdown-item" href="#">This Month</a></li>
+                      <li><a class="dropdown-item" href="#">This Year</a></li>
+                    </ul>
+                  </div>
+
+                  <div class="card-body">
+                    <h5 class="card-title">Customers <span>| This Year</span></h5>
+
+                    <div class="d-flex align-items-center">
+                      <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                        <i class="bi bi-people"></i>
+                      </div>
+                      <div class="ps-3">
+                        <h6>1244</h6>
+                        <span class="text-danger small pt-1 fw-bold">5%</span> <span class="text-muted small pt-2 ps-1">decrease</span>
+
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+              </div><!-- End Customers Card -->
+
+              <!-- Reports -->
+              <div class="col-12 mb-3">
+                <div class="card">
+
+                  <div class="filter">
+                    <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                      <li class="dropdown-header text-start">
+                        <h6>Filter</h6>
+                      </li>
+
+                      <li><a class="dropdown-item" href="#">Today</a></li>
+                      <li><a class="dropdown-item" href="#">This Month</a></li>
+                      <li><a class="dropdown-item" href="#">This Year</a></li>
+                    </ul>
+                  </div>
+
+                  <div class="card-body">
+                    <h5 class="card-title">Orders Report <span> | Today</span></h5>
+                    <div id="reportsChart"></div>
+                  </div>
+
+                </div>
+              </div><!-- End Reports -->
+
+              <!-- Top Selling -->
+              <div class="col-12">
+                <div class="card top-selling overflow-auto">
+
+                  <div class="filter">
+                    <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                      <li class="dropdown-header text-start">
+                        <h6>Filter</h6>
+                      </li>
+
+                      <li><a class="dropdown-item" href="#">Today</a></li>
+                      <li><a class="dropdown-item" href="#">This Month</a></li>
+                      <li><a class="dropdown-item" href="#">This Year</a></li>
+                    </ul>
+                  </div>
+
+                  <div class="card-body pb-0">
+                    <h5 class="card-title">Top Selling <span>| Today</span></h5>
+
+                    <table class="table table-borderless">
+                      <thead>
+                        <tr>
+                          <th scope="col">Preview</th>
+                          <th scope="col">Product</th>
+                          <th scope="col">Price</th>
+                          <th scope="col">Sold</th>
+                          <th scope="col">Revenue</th>
+                        </tr>
+                      </thead>
+                      <tbody id="top_sales_tbody">
+                        <tr>
+                          <th scope="row"><a href="#"><img src="/img/product-1.jpg" alt=""></a></th>
+                          <td><a href="#" class="text-primary fw-bold">Ut inventore ipsa voluptas nulla</a></td>
+                          <td>$64</td>
+                          <td class="fw-bold">124</td>
+                          <td>$5,828</td>
+                        </tr>
+                        <tr>
+                          <th scope="row"><a href="#"><img src="/img/product-2.jpg" alt=""></a></th>
+                          <td><a href="#" class="text-primary fw-bold">Exercitationem similique doloremque</a></td>
+                          <td>$46</td>
+                          <td class="fw-bold">98</td>
+                          <td>$4,508</td>
+                        </tr>
+                        <tr>
+                          <th scope="row"><a href="#"><img src="/img/product-3.jpg" alt=""></a></th>
+                          <td><a href="#" class="text-primary fw-bold">Doloribus nisi exercitationem</a></td>
+                          <td>$59</td>
+                          <td class="fw-bold">74</td>
+                          <td>$4,366</td>
+                        </tr>
+                        <tr>
+                          <th scope="row"><a href="#"><img src="/img/product-4.jpg" alt=""></a></th>
+                          <td><a href="#" class="text-primary fw-bold">Officiis quaerat sint rerum error</a></td>
+                          <td>$32</td>
+                          <td class="fw-bold">63</td>
+                          <td>$2,016</td>
+                        </tr>
+                        <tr>
+                          <th scope="row"><a href="#"><img src="/img/product-5.jpg" alt=""></a></th>
+                          <td><a href="#" class="text-primary fw-bold">Sit unde debitis delectus repellendus</a></td>
+                          <td>$79</td>
+                          <td class="fw-bold">41</td>
+                          <td>$3,239</td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                  </div>
+
+                </div>
+              </div><!-- End Top Selling -->
+
+            </div>
+          </div><!-- End Left side columns -->
+
+        </div>
+      </section>
+
+
+      </div>
+      <div class="tab-pane fade" id="items">
+        <div class="pagetitle">
+          <nav>
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="/profile">Home</a></li>
+              <li class="breadcrumb-item active">Items</li>
+            </ol>
+          </nav>
+        </div><!-- End Page Title -->
+        <div class="row">
+          <div class="col-md-12 col-sm-12">
+            <div class="card">
+              <div class="card-body">
+                <!-- Bordered Tabs -->
+                <ul class="nav nav-tabs nav-tabs-bordered">
+                  <li class="nav-item">
+                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#categories">Category</button>
+                  </li>
+                  <li class="nav-item">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#item-form">Item</button>
+                  </li>
+                </ul>
+                <div class="tab-content pt-1">
+                  <div class="tab-pane fade active show admin-category-container pt-3 justify-content-center" id="categories"> 
+                    <div class="category-info overflow-auto">
+                      <div class="col-12  mb-2 norrechel-alert bg-success text-white text-center p-2 "> 
+                        Category added successfully
+                        
+                      </div>
+                      <table class="table table-bordered">
+                        <thead>
+                          <tr class="text-center bg-black">
+                            <th scope="col">No</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody id="items_tbody">
+                          <% if (categories.length == 1) { %>
+                            <tr>
+                              <td><%= index %></td>
+                              <td><%= categories.name %></td>
+                              <td><button title="Edit" class="btn btn-sm text-white btn-success edit-category-btn" data-bs-toggle="offcanvas" data-bs-target="#category-update-content" aria-controls="offcanvasRight" name="<%= categories.name %>"><i class="bi bi-pencil-square"></i></button>
+                                <button title="Delete" class="btn btn-sm text-white btn-danger delete-category-btn " name="<%= categories.name %>"><i class="bi bi-trash"></i></button></td>
+                            </tr>
+                          <% } %>
+                          <% let index = 0; for( let i in categories) { index++;%>
+                            <tr>
+                              <td><%= index %></td>
+                              <td><%= categories[i].name %></td>
+                              <td><button title="Edit" class="btn btn-sm text-white btn-success edit-category-btn" data-bs-toggle="offcanvas" data-bs-target="#category-update-content" aria-controls="offcanvasRight" name="<%= categories[i].name %>"><i class="bi bi-pencil-square"></i></button>
+                                <button title="Delete" class="btn btn-sm text-white btn-danger delete-category-btn " name="<%= categories[i].name %>"><i class="bi bi-trash"></i></button></td>
+                              </tr>
+                          <% } %>
+                        </tbody>
+                      </table>  
+                    </div>
+                  </div>
+                  <div class="tab-pane fade item-container pt-3 justify-content-center" id="item-form"> 
+                    <div class="item-info overflow-auto">
+                      <div class="col-12 mb-2 norrechel-alert bg-success text-white text-center p-2 "> 
+                        Item updated successfully
+                        
+                      </div>
+                        <table class="table table-bordered">
+                          <thead>
+                            <tr>
+                              <th scope="col">Image</th>
+                              <th scope="col">Name</th>
+                              <th scope="col">Quantity</th>
+                              <th scope="col">Price</th>
+                              <th scope="col">Supplier</th>
+                              <th scope="col">Action</th>
+                            </tr>
+                          </thead>
+                          <tbody id="items_tbody">
+                            <% if (items.length == 1) { %>
+                              <tr>
+                                <th scope="row"><img src="<%= items.path %><%= items.image %>" class="" alt="..."></th>
+                                <td><a href="/item/<%= items._id %>" class=""><%= items.name %></a></td>
+                                <td><%= items.quantity %></td>
+                                <td><%= items.price %></td>
+                                <td><%= items.supplier %></td>
+                                <td><button title="Edit" class="btn btn-sm text-white btn-success edit-item-btn" data-bs-toggle="offcanvas" data-bs-target="#item-update-contents" aria-controls="offcanvasRight" name="<%= items._id %>"><i class="bi bi-pencil-square"></i></button>
+                                  <button title="Delete" class="btn btn-sm text-white btn-danger delete-item-btn " name="<%= items._id %>"><i class="bi bi-trash"></i></button></td>
+                              </tr>
+                            <% } %>
+                            <% for( let i in items ) { %>
+                              <tr>
+                                <th scope="row"><img src="<%= items[i].path %><%= items[i].image %>" class="" alt="..."></th>
+                                <td><a href="/item/<%= items[i]._id %>" class=""><%= items[i].name %></a></td>
+                                <td><%= items[i].quantity %></td>
+                                <td><%= items[i].price %></td>
+                                <td><%= items[i].supplier %></td>
+                                <td><button title="Edit" class="btn btn-sm text-white btn-success edit-item-btn" data-bs-toggle="offcanvas" data-bs-target="#item-update-contents" aria-controls="offcanvasRight" name="<%= items[i]._id %>"><i class="bi bi-pencil-square"></i></button>
+                                  <button title="Delete" class="btn btn-sm text-white btn-danger delete-item-btn " name="<%= items[i]._id %>"><i class="bi bi-trash"></i></button></td>
+                              </tr>
+                            
+                            <% } %>
+                          </tbody>
+                        </table>
+                       </div>   
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>       
+      </div>
+      
+      <div class="tab-pane fade" id="orders">
+        <div class="pagetitle">
+            <nav>
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/profile">Home</a></li>
+                <li class="breadcrumb-item active">Orders</li>
+              </ol>
+            </nav>
+        </div><!-- End Page Title -->
+        <div class="col-8">
+                <div class="card recent-sales overflow-auto">
+
+                  <div class="filter">
+                    <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                      <li class="dropdown-header text-start">
+                        <h6>Filter</h6>
+                      </li>
+
+                      <li><a class="dropdown-item" href="#">Today</a></li>
+                      <li><a class="dropdown-item" href="#">This Month</a></li>
+                      <li><a class="dropdown-item" href="#">This Year</a></li>
+                    </ul>
+                  </div>
+
+                  <div class="card-body">
+                    <h5 class="card-title">Recent Orders <span>| Today</span></h5>
+                    <table class="table table-border datatable">
+                      <thead>
+                        <tr>
+                          <!-- <th scope="col">Image</th> -->
+                          <th scope="col">Image</th>
+                          <th scope="col">Customer</th>
+                          <th scope="col">Product</th>
+                          <th scope="col">Quantity</th>
+                          <th scope="col">Price</th>
+                          <th scope="col">Total</th>
+                          <th scope="col">Status</th>
+                        </tr>
+                      </thead>
+                      <tbody id="orders-tbody">
+                        <% if (items.length == 1) { %>
+                          <tr>
+                            <th scope="row"><img src="<%= orders.path %><%= items.image %>" class="" alt="..."></th>
+                            <td><%= orders.customer %></td>
+                            <td class="text-primary"><%= orders.item %></td>
+                            <td><%= orders.quantity %></td>
+                            <td><%= orders.price %></td>
+                            <td><%= orders.total %></td>
+                            <td><%= orders.status %></td>
+                          </tr>
+                        <% } %>
+                        <% for( let i in orders ) { %>
+                          <tr>
+                            <th scope="row"><img src="<%= orders[i].path %><%= items[i].image %>" class="" alt="..."></th>
+                            <td><%= orders[i].customer %></td>
+                            <td class="text-primary"><%= orders[i].item %></td>
+                            <td><%= orders[i].quantity %></td>
+                            <td><%= orders[i].price %></td>
+                            <td><%= orders[i].total %></td>
+                            <td><%= orders[i].status %></td>
+                          </tr>
+                        <% } %>                        
+                      </tbody>
+                    </table>
+
+                  </div>
+
+                </div>
+              </div><!-- End orders -->
+      </div>
+      <div class="tab-pane fade" id="new-resources">
+        <div class="pagetitle">
+          <nav>
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="/profile">Home</a></li>
+              <li class="breadcrumb-item active">Add Resources</li>
+            </ol>
+          </nav>
+        </div><!-- End Page Title -->
+        <div class="row justify-content-center ailgn-item-center">
+          <div class="col-md-8 col-sm-12 ">
+            <div class="card">
+              <div class="card-body pt-3">
+                <!-- Bordered Tabs -->
+                <ul class="nav nav-tabs nav-tabs-bordered">
+                  <li class="nav-item">
+                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#new-category-form">Category</button>
+                  </li>
+                  <li class="nav-item">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#new-item-form">Item</button>
+                  </li>
+                </ul>
+                <div class="tab-content pt-2">
+
+                  <div class="tab-pane fade active show admin-category-container pt-3 justify-content-center" id="new-category-form">    
+                    <div id="cateory-alert" role="alert"></div>
+                    <!-- Category Form -->
+                    <form class="needs-validation p-0" novalidate id="norrechel-new-category-form" autocomplete="off">
+                      <div class="row mb-3 justify-content-center">
+                        <div class="col-8 mb-2 norrechel-alert bg-success text-white text-center p-2 "> 
+                          Category added successfully
+                          
+                        </div>
+                        <div class="col-8 mb-2">
+                          <label for="category-name" class="form-label">Name</label>
+                          <input type="text" name="name" placeholder="category name" class="form-control form-control-sm shadow-none" id="category-name">
+                          <div class="invalid-feedback">Please enter a valid Email Address!</div>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" name="submit" class="btn btn-sm">Add</button>
+                            <button class="btn btn-sm d-none loading-btn" type="button" disabled>
+                              <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                              <span class="">Loading...</span>
+                            </button>
+                        </div>
+                      </div>
+                    </form><!-- End add item Form -->
+                  </div>
+                  <div class="tab-pane fade admin-item-container pt-3" id="new-item-form">
+                    <h2 class="text-center">New Item</h2>   
+                    <!-- Item Form -->
+                    <form class="needs-validation" novalidate id="admin-new-item-form" autocomplete="off">
+                      <div class="row mb-1 justify-content-center">
+                        <div class="col-8 mb-2 norrechel-alert bg-success text-white text-center p-2 "> 
+                          Item added successfully
+                          
+                        </div>
+                      </div>
+                      <div class="row mb-1 justify-content-center">
+                        <label for="itemImage" class="col-md-2 col-lg-2 col-form-label">Item Image</label>
+                        <div class="col-6">                       
+                          <div class="pt-2 d-flex">
+                            <label for="item_photo" class="btn text-light upload_icon" title="Upload an item photo"><i class="class bi bi-upload"></i></label>
+                            <input type="file" name="file" id="item_photo" hidden required>
+                            <img src="" alt="item photo" class="d-none imgPreview">
+                            <div class="invalid-feedback">Please enter a valid Email Address!</div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row mb-1 justify-content-center">
+                        <label for="itemName" class="col-4 col-form-label">Name</label>  
+                        <label for="category" class="col-4 col-form-label">Category</label>
+                      </div>
+                      <div class="row mb-1 justify-content-center">
+                        <div class="col-4">
+                          <input name="name" type="text" class="form-control form-control-sm shadow-none" id="itemName" required>
+                          <div class="invalid-feedback">Please enter a valid Email Address!</div>
+                        </div> 
+                        <div class="col-4">
+                          <select name="category" id="category" class="form-select form-select-sm shadow-none" aria-label="Default select example">
+                              <option value=""></option>
+                              <% if (categories.length == 1) { %>
+                                <option value="<%= categories.name %>"><%= categories.name %></option>
+                              <% } %>
+                              <% for( let i in categories ) { %>                              
+                                <option value="<%= categories[i].name %>"><%= categories[i].name %></option>
+                              <% } %>
+                          </select>  
+                          <div class="invalid-feedback">Please enter a valid Email Address!</div>
+                        </div>
+                      </div>
+                      <div class="row mb-1 justify-content-center">
+                        <label for="quantity" class="col-8 col-form-label">Quantity</label>                    
+                        <div class="col-8">
+                          <input type="number" name="quantity" class="form-control form-control-sm shadow-none" id="quantity" placeholder="e.g. 50" required>
+                          <div class="invalid-feedback">Please enter a valid Email Address!</div>
+                        </div>
+                      </div>  
+                      
+                      <div class="row mb-1 justify-content-center">
+                        <label for="price" class="col-4 col-form-label">Price</label>  
+                        <label for="discount" class="col-4 col-form-label">discount</label>
+                      </div>
+                      <div class="row mb-1 justify-content-center">
+                        <div class="col-4">
+                          <input name="price" type="number" class="form-control form-control-sm shadow-none" id="price" required>
+                          <div class="invalid-feedback">Please enter a valid Email Address!</div>
+                        </div> 
+                        <div class="col-4">
+                          <input name="discount" type="number" class="form-control form-control-sm shadow-none" id="discount" required>
+                          <div class="invalid-feedback">Please enter a valid Email Address!</div>
+                        </div>
+                      </div>
+
+
+                      <div class="row mb-1 justify-content-center">
+                        <label for="supplier" class="col-8 col-form-label">Supplier</label>                    
+                        <div class="col-8">
+                          <input type="text" name="supplier" class="form-control form-control-sm shadow-none" id="supplier" placeholder="" required>
+                          <div class="invalid-feedback">Please enter a valid Email Address!</div>
+                        </div>
+                      </div>
+                      
+                      <div class="row mb-1 justify-content-center">
+                        <label for="about" class="col-8 col-form-label">Description</label>
+                        <div class="col-8">
+                          <textarea name="about" class="form-control form-control-sm shadow-none" spellcheck="true" id="about" style="height: 100px"></textarea>
+                          <div class="invalid-feedback">Please enter a valid Email Address!</div>
+                        </div>
+                      </div>
+
+                      <div class="row mb-1 justify-content-center">
+                        <label for="details" class="col-8 col-form-label">Details</label>
+                        <div class="col-8">
+                          <textarea name="details" class="form-control form-control-sm shadow-none" spellcheck="true" id="details" style="height: 100px"></textarea>
+                          <div class="invalid-feedback">Please enter a valid Email Address!</div>
+                        </div>
+                      </div>
+
+                      <div class="text-center">
+                        <button type="submit" name="submit" class="btn btn-sm">Add</button>
+                        <button class="btn btn-sm d-none loading-btn" type="button" disabled>
+                          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                          <span class="">Loading...</span>
+                        </button>
+                      </div>
+                    </form><!-- End add item Form -->
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!-- End add Resources  -->
+      <div class="tab-pane fade " id="profile">
+        <div class="pagetitle">
+          <nav>
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="/profile">Home</a></li>
+                <li class="breadcrumb-item active">Profile</li>
+              </ol>
+          </nav>
+        </div><!-- End Page Title -->
+        <section class="section profile">
+          <div class="row">
+          <div class="col-xl-4">
+
+            <div class="card">
+              <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
+                <h2><%= user.firstName %> <%= user.lastName %></h2>
+                <h3>CEO</h3>
+                <div class="social-links mt-2">
+                  <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                  <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                  <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                  <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-xl-8">
+
+            <div class="card">
+              <div class="card-body pt-3">
+                <!-- Bordered Tabs -->
+                <ul class="nav nav-tabs nav-tabs-bordered">
+
+                  <li class="nav-item">
+                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-overview">Overview</button>
+                  </li>
+
+                  <li class="nav-item">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit">Edit Profile</button>
+                  </li>
+
+                  <li class="nav-item">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-change-password">Change Password</button>
+                  </li>
+
+                </ul>
+                <div class="tab-content pt-2">
+
+                  <div class="tab-pane fade show active profile-overview" id="profile-overview">
+
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label ">Full Name</div>
+                      <div class="col-lg-9 col-md-8"><%= user.firstName %> <%= user.lastName %></div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">Address</div>
+                      <div class="col-lg-9 col-md-8"><%= user.country %> | <%= user.town %></div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">Phone</div>
+                      <div class="col-lg-9 col-md-8"><%= user.contact %></div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">Email</div>
+                      <div class="col-lg-9 col-md-8"><%= user.email %></div>
+                    </div>
+
+                  </div>
+
+                  <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
+                    <div id="update-profile-alert" class=""></div>
+                    <!-- Profile Edit Form -->
+                    <form class="form" id="user-profile-edit" autocomplete="off">
+                      <div class="col-9 m-auto norrechel-alert bg-success text-white text-center p-2"> 
+                        User information updated successfully
+                        
+                      </div>
+                      <fieldset class="profile-edit-fieldset px-3 mt-2">
+                        <!-- <legend class="mb-3">Personal Information</legend> -->
+                        <div class="row mb-1">
+                          <label for="fName" class="col-6 col-form-label">First Name</label>
+                          <label for="lName" class="col-6 col-form-label">Last Name</label>
+                        </div>
+    
+                        <div class="row mb-1">                      
+                          <div class="col-6">
+                            <input name="fName" type="text" class="form-control form-control-sm shadow-none" id="fName" value="<%= user.firstName %>">
+                            <div class="invalid-feedback"></div>
+                          </div>
+                          <div class="col-6">
+                            <input name="lName" type="text" class="form-control form-control-sm shadow-none" id="lName" value="<%= user.lastName %>">
+                            <div class="invalid-feedback"></div>
+                          </div>
+                        </div>
+    
+                        <div class="row mb-1">
+                          <label for="phone" class="col-6 col-form-label">Phone</label>
+                          <label for="email" class="col-6 col-form-label">Email</label>
+                        </div> 
+                        <div class="row mb-1">
+                          <div class="col-6">
+                            <input name="phone" type="text" class="form-control form-control-sm shadow-none" id="phone" value="<%= user.contact %>">
+                            <div class="invalid-feedback"></div>
+                          </div>
+                          <div class="col-6">
+                            <input name="email" type="email" class="form-control form-control-sm shadow-none" id="edit-email" value="<%= user.email %>">
+                            <div class="invalid-feedback"></div>
+                          </div>
+                        </div>
+                        <div class="row mb-1">
+                          <label for="country" class="col-6 col-form-label">Country</label>
+                          <label for="town" class="col-6 col-form-label">Town</label>
+                        </div>
+                        <div class="row mb-1">
+                          <div class="col-6">
+                            <input name="country" type="text" class="form-control form-control-sm shadow-none" id="country" value="<%= user.country %>">
+                            <div class="invalid-feedback"></div>
+                          </div>
+                          <div class="col-6">
+                            <input name="town" type="text" class="form-control form-control-sm shadow-none" id="town" value="<%= user.town %>">
+                            <div class="invalid-feedback"></div>
+                          </div>
+                        </div>
+                      </fieldset>
+                      <div class="text-center">
+                        <button type="submit" name="submit" class="btn btn-sm save-btn">Save Changes</button>
+                        <button class="btn btn-sm save-btn d-none loading-btn" type="button" disabled>
+                          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                          <span class="">Loading...</span>
+                        </button>
+                      </div>
+                    </form><!-- End Profile Edit Form -->
+                    
+                  </div>
+                  <div class="tab-pane fade pt-3" id="profile-change-password">
+                    <div class="container justify-content-center">
+                      <div class="row m-auto justify-content-center align-items-center">
+                        <div class="col-10 m-auto justify-content-center">
+                          <div class="col-9 m-auto norrechel-alert bg-success text-white text-center p-2"> 
+                            User information updated successfully
+                            
+                          </div>
+                          <!-- Change Password Form -->
+                          <form class="form" id="password-update" autocomplete="off">
+      
+                            <div class="row mb-3">
+                              <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Current Password</label>
+                              <div class="col-md-8 col-lg-9">
+                                <input name="password" type="password" class="form-control shadown-none" id="currentPassword">
+                                <div class="invalid-feedback">Please enter a valid Email Address!</div>
+                              </div>
+                            </div>
+      
+                            <div class="row mb-3">
+                              <label for="newPassword" class="col-md-4 col-lg-3 col-form-label">New Password</label>
+                              <div class="col-md-8 col-lg-9">
+                                <input name="newpassword" type="password" class="form-control shadown-none" id="newPassword">
+                                <div class="invalid-feedback">Please enter a valid Email Address!</div>
+                              </div>
+                            </div>
+      
+                            <div class="row mb-3">
+                              <label for="renewPassword" class="col-md-4 col-lg-3 col-form-label">Re-enter New Password</label>
+                              <div class="col-md-8 col-lg-9">
+                                <input name="confirm" type="password" class="form-control" id="renewPassword">
+                                <div class="invalid-feedback">Please enter a valid Email Address!</div>
+                              </div>
+                            </div>
+      
+                            <div class="text-center">
+                              <button type="submit" name="submit" class="btn btn-primary">Change Password</button>
+                              <button class="btn btn-sm d-none loading-btn" type="button" disabled>
+                                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                <span class="">Loading...</span>
+                              </button>
+                            </div>
+                          </form><!-- End Change Password Form -->
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+
+                </div><!-- End Bordered Tabs -->
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+      </div>
+    </div> 
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="item-update-contents" aria-labelledby="offcanvasRightLabel">
+      <div class="offcanvas-header">
+        <h5 id="offcanvasRightLabel">Update Item Information</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="container">
+          <div class="row">
+            <form class="needs-validation" novalidate id="admin-update-item-form" autocomplete="off">
+              <div class="row mb-1 justify-content-center">
+                <div class="col-10 mb-2 norrechel-alert bg-success text-white text-center p-2 "> 
+                  Item added successfully
+                  
+                </div>
+              </div>
+              <div class="row mb-1 justify-content-center update-row">
+                <label for="item_update_photo" class="col-md-4 col-lg-4 col-form-label">Item Image</label>
+                <div class="col-8">                       
+                  <div class="pt-2 d-flex">
+                    <label for="item_update_photo" class="btn text-light upload_icon" title="Upload an item photo"><i class="class bi bi-upload"></i></label>
+                    <input type="file" name="file" id="item_update_photo" hidden required>
+                    <img src="" alt="item photo" class="item_updatePreview">
+                    <div class="invalid-feedback">Please enter a valid Email Address!</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mb-1 justify-content-center update-row">
+                <label for="item_updateName" class="col-6 col-form-label">Name</label>  
+                <label for="item_category_update" class="col-6 col-form-label">Category</label>
+              </div>
+              <div class="row mb-1 justify-content-center update-row">
+                <div class="col-6">
+                  <input type="hidden" name="_id" id="item_id">
+                  <input name="name" type="text" class="form-control form-control-sm shadow-none" id="item_updateName" required>
+                  <div class="invalid-feedback">Please enter a valid Email Address!</div>
+                </div> 
+                <div class="col-6">
+                  <select name="category" id="item_category_update" class="form-select form-select-sm shadow-none" aria-label="Default select example">
+                      <option value=""></option>
+                      <% if (categories.length == 1) { %>
+                        <option value="<%= categories.name %>"><%= categories.name %></option>
+                      <% } %>
+                      <% for( let i in categories ) { %>                              
+                        <option value="<%= categories[i].name %>"><%= categories[i].name %></option>
+                      <% } %>
+                  </select>  
+                  <div class="invalid-feedback">Please enter a valid Email Address!</div>
+                </div>
+              </div>
+              <div class="row mb-1 justify-content-center update-row">
+                <label for="update_quantity" class="col-12 col-form-label">Quantity</label>                    
+                <div class="col-12">
+                  <input type="number" name="quantity" class="form-control form-control-sm shadow-none" id="update_quantity" placeholder="e.g. 50" required>
+                  <div class="invalid-feedback">Please enter a valid Email Address!</div>
+                </div>
+              </div>  
+              
+              <div class="row mb-1 justify-content-center update-row">
+                <label for="update_price" class="col-6 col-form-label">Price</label>  
+                <label for="update_discount" class="col-6 col-form-label">discount</label>
+              </div>
+              <div class="row mb-1 justify-content-center update-row">
+                <div class="col-6">
+                  <input name="price" type="number" class="form-control form-control-sm shadow-none" id="update_price" required>
+                  <div class="invalid-feedback">Please enter a valid Email Address!</div>
+                </div> 
+                <div class="col-6">
+                  <input name="discount" type="number" class="form-control form-control-sm shadow-none" id="update_discount" required>
+                  <div class="invalid-feedback">Please enter a valid Email Address!</div>
+                </div>
+              </div>
+
+
+              <div class="row mb-1 justify-content-center update-row">
+                <label for="update_supplier" class="col-12 col-form-label">Supplier</label>                    
+                <div class="col-12">
+                  <input type="text" name="supplier" class="form-control form-control-sm shadow-none" id="update_supplier" placeholder="" required>
+                  <div class="invalid-feedback">Please enter a valid Email Address!</div>
+                </div>
+              </div>
+              
+              <div class="row mb-1 justify-content-center update-row">
+                <label for="update_about" class="col-12 col-form-label">Description</label>
+                <div class="col-12">
+                  <textarea name="about" class="form-control form-control-sm shadow-none" spellcheck="true" id="update_about" style="height: 100px"></textarea>
+                  <div class="invalid-feedback">Please enter a valid Email Address!</div>
+                </div>
+              </div>
+
+              <div class="row mb-1 justify-content-center update-row">
+                <label for="update_details" class="col-12 col-form-label">Details</label>
+                <div class="col-12">
+                  <textarea name="details" class="form-control form-control-sm shadow-none" spellcheck="true" id="update_details" style="height: 100px"></textarea>
+                  <div class="invalid-feedback">Please enter a valid Email Address!</div>
+                </div>
+              </div>
+
+              <div class="text-center update-row">
+                <button type="submit" name="submit" class="btn btn-sm w-75">Update</button>
+                <button class="btn btn-sm w-75 d-none loading-btn" type="button" disabled>
+                  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                  <span class="">Loading...</span>
+              </button>
+              </div>
+            </form><!-- End add item Form -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="category-update-content" aria-labelledby="categoryLabel">
+      <div class="offcanvas-header">
+        <h5 id="categoryLabel">Category Update</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <form class="needs-validation p-0" novalidate id="norrechel-category-update-form" autocomplete="off">
+          <div class="row mb-3 justify-content-center">
+            <div class="col-10 mb-2 norrechel-alert bg-success text-white text-center p-2 "> 
+              Category added successfully
+              
+            </div>
+            <div class="col-10 mb-2 update-row">
+              <label for="ref-name" class="form-label">Name</label>
+              <input type="text" name="ref_name" placeholder="category name" class="form-control form-control-sm shadow-none" id="ref-name">
+              <div class="invalid-feedback">Please enter a valid Email Address!</div>
+            </div>
+            <div class="col-10 mb-2 update-row">
+              <label for="category-update-name" class="form-label">Name</label>
+              <input type="text" name="name" placeholder="New name" class="form-control form-control-sm shadow-none" id="category-update-name">
+              <div class="invalid-feedback">Please enter a valid Email Address!</div>
+            </div>
+            <div class="text-center update-row">
+                <button type="submit" name="submit" class="btn btn-sm w-75">Update</button>
+                <button class="btn btn-sm w-75 d-none loading-btn" type="button" disabled>
+                  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                  <span class="">Loading...</span>
+              </button>
+            </div>
+          </div>
+        </form><!-- End add item Form -->
+      </div>
+    </div>
+  </main><!-- End #main -->

@@ -1,0 +1,70 @@
+
+  <div class="cart-main-container">
+    <div class="container align-items-center justify-content-center">
+      <div class="row">
+        <div class="col-md-9 col-sm-12 mb-2">
+            <div class="card">
+              <div class="card-header">
+                <div id="login-alert" class="col-12 my-3 norrechel-alert bg-danger text-white text-center p-2"></div>
+                <h4 class="card-count">
+                  Cart <% if(items.length > 0) {%>(<%= items.length  %>)<% } %>
+                </h4>
+              </div>
+              <div class="cart-body ">
+                <% for( let i in items ) { %>                
+                  
+                  <a href="/item/<%=items[i]._id%>">
+                  <div class="row px-3 d-flex card-items-body">
+                    <div class="col-md-2 col-sm-12 cart-item-image mx-auto mb-0">
+                      
+                      <form class="form" id="delete-cart-form">
+                        <img src=".<%= items[i].path %><%= items[i].image %>" class="img-card-top" alt="...">
+                        <input hidden class="order" name="order" value="<%= items[i]._id %>">
+                        <button class="btn btn-sm delete-cart-btn delete-btn"><i class="bi bi-trash pe-1"></i>Delete</button>
+                      </form>
+                    </div>
+                      <div class="col-md-8 col-sm-12 mb-0 cart-item-content">
+                        <h4><%= items[i].name  %></h4>
+                        <p><%= items[i].description %>.</p>
+                      </div>
+                      <div class="col-md-2 col-sm-12 cart-item-price text-end pe-3">
+                        <h4 class="mt-4 mb-0">USD <%= items[i].price %></h4>
+                        <p class="m-1"><%= items[i].discount %> %</p>
+                        <div class="input-group mb-3">
+                          <!-- <form class="form cart-quantity" id="cart-quantity"> -->
+                            <button class="btn item-btn-quantity btn-sm substract-btn" type="button"<% if (items[i].quantity == 1) { %>disabled<% } %>>-</button>
+                            <input hidden name="user" class="user" disabled value="<%= user.email%> %>">
+                            <input hidden name="item" class="item" disabled value="<%= items[i]._id%>">
+                            <input type="text" name="quantity" class="quantity-input" disabled value="<%= items[i].quantity%>" name="<%= items[i].name %>">
+                            <button class="btn item-btn-quantity btn-sm add-btn">+</button>
+                          <!-- </form> -->
+                        </div>
+                      </div>
+                    </div>
+                    <hr class="divider">                    
+                  </a>
+                <% } %>
+              </div>  
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-12">
+          <div class="card subtotal-card">
+            <div class="card-header">
+              <h4>Cart Summary Total</h4>
+            </div>
+            <div class="cart-body cart-subtotal p-2">
+              <% for( let i in items) { %>
+                <p class="summary-total ps-2">
+                  <%= items[i].name %>
+                  <span class="">USD <%= items[i].total %></span>
+                </p>
+              <% } %>
+              <hr class="divider m-1">
+              <p>Subtotal <span class="">USD <%let tot = 0; for(let i in items) {tot += Number(items[i].total)} %> <%= tot %>%></span></p>
+              <a href="checkout" class="btn btn-sm checkout-btn" type="button">Checkout (USD <%= tot %>)</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

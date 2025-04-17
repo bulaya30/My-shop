@@ -1,0 +1,113 @@
+
+  <div class="cart-main-container">
+    <div class="container">
+        <div class="row mb-3">
+            <div id="login-alert" class="col-12 my-3 norrechel-alert bg-danger text-white text-center p-2"></div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-9 col-sm-12 border-secondary">
+                <div class="row mb-2">
+                    <div class="card">
+                        <div class="card-body cart-checkout-body">
+                            <h3 class="cart-subtitle m-2">Addresse de Client</h3>
+                            <h4 class="cart-subtitle ps-3"><%= user.firstName %> <%= user.lastName %></h4>
+                            <p class="card-text ps-3">Address: <%= user.country %> | <%= user.town %> | Tel: <%= user.contact %></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="card">
+                        <div class="card-body cart-checkout-body">
+                            <h3 class="cart-subtitle m-2">Compte Client</h3>
+                            <h4 class="card-subtitle ps-3">
+                                Votre solde actuel est <span> USD <%= account.amount %></span>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="card shadow-none">
+                        <div class="card-body cart-checkout-body">
+                            <h3 class="cart-subtitle m-2">Detail sur la livraison</h3>
+                            <p class="card-text ps-4"><p>Le délai de la livraison commence le jour ou vous faites votre commande. <br>
+                                Elle prend 14 jours pour les articles/produits exportés de l'exterieur. <br>
+                                Une fois l'article/le produit pret pour la livrason, vous serez contacter par téléphone pour 
+                                venir le(s) recuperer dans notre depot. <br>
+                                On est ouvert du Lundi-Samedi (de 8h00 à 17h30), l'/les article(s)/produit(s) est/seront gardé 
+                                dans notre dépot pour une semaine seulement, si vous ne venez pas le recuperer, la commande sera 
+                                annulé
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="card">
+                        <div class="card-header">
+                          <h4 class="card-count">
+                            Order Details
+                          </h4>
+                        </div>
+                        <div class="item-info overflow-auto">
+
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr class="text-center bg-black">
+                                      <th scope="col">No</th>
+                                      <th scope="col">Image</th>
+                                      <th scope="col">Name</th>
+                                      <th scope="col">Quantity</th>
+                                      <th scope="col">Price</th>
+                                      <th scope="col">Total</th>
+                                      <th scope="col">Action</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody id="items_tbody">
+                                      <% let index = 0; for( let i in items ) { index++;%>                
+                                        <tr>
+                                            <td><%= index %></td>
+                                            <th scope="row"><img src="<%= items[i].path %><%= items[i].image %>" class="" alt="..."></th>
+                                            <td><a href="/item/<%=items[i]._id%>"><%= items[i].name %></a></td>
+                                            <td><%= items[i].quantity %></td>
+                                            <td><%= items[i].price %></td>
+                                            <td><%= items[i].total %></td>
+                                            <td><a href="<%= items[i]._id %>" class="btn btn-sm text-center text-white btn-danger"><i class="bi bi-trash pe-1"></i>Delete</a></td>
+                                        </tr>
+                                        <% } %>
+                                  </tbody>
+                            </table>  
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-12 border-warning">
+                <div class="row ms-md-1">
+                    <div class="card p-0">
+                        <div class="card-body order-checkout-body">
+                            <h4 class="card-subtitle m-3 text-center">ORDER SUMMARY</h4>
+                            <hr class="divider m-2">
+                        <form id="order-form">
+                            <div>
+                                <label>Total des items  <%= cart.length %></label>
+                                <strong>USD</strong> <input type="text" disabled name="total" id="total" value=" <% let t = 0; for(let i in items) {t += Number(items[i].total)} %><%= t %>">
+                            </div>
+                            <div>
+                                <label>Livraison</label>
+                                <strong>USD</strong> <input type="text" disabled name="sheeping" id="sheeping" value=" 20">
+                            </div>
+                            <hr class="cart-divider">
+                            <div>
+                                <label>Total</label>
+                                <strong>USD</strong> <input type="text" disabled name="general_total" id="general_total" value=" <%= t+20 %>">
+                                <input type="hidden" name="user" value="<%= user.email %>" id="user">
+                            </div>
+                        <div >
+                            <button class="btn btn-sm order-btn" id="order-btn">Confirmer la commande</button>
+                        </div>
+                    </form>
+                </div>                
+            </div>
+        </div>
+    </div>
+</div>        
+    </div>
+  </div>

@@ -1,0 +1,55 @@
+<div class="container">
+    <section class="section min-vh-100 d-flex flex-column align-items-center justify-content-center">
+        <div class="container">
+          <div class="row justify-content-end">
+            <div class="col-lg-4 col-md-6 col-sm-8 d-flex flex-column align-items-center justify-content-center">
+              <div class="card mb-3 shadow">
+                <div class="card-body">
+                  <div class="pt-4 pb-2 mb-3">
+                    <h5 class="card-title text-center pb-0 fs-4 fw-bold">Se connecter</h5>
+                  </div>
+                  <div id="login-alert" class="col-12 my-3 norrechel-alert bg-danger text-white text-center p-2">
+                    Wrong e-mail or password
+                  </div>
+                  <form class="row g-3 needs-validation login-form form" novalidate autocomplete="off">
+                    <div class="col-12">
+                      <label for="email">Address email</label>
+                      <input type="email" class="form-control form-control-sm shadow-none" id="email" placeholder="">
+                      <div class="invalid-feedback">Please enter a valid Email Address!</div>
+                    </div>
+
+                    <div class="col-12">
+                      <label for="password">Mot de passe</label>
+                      <input type="password" class="form-control form-control-sm shadow-none" id="password" placeholder="">
+                        <div class="invalid-feedback">Please enter your password!</div>
+                    </div>
+                    <div class="col-12">
+                      <a class="" href="/forgot">Mot de passe oublié?</a>
+                    </div>
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input class="form-check-input rounded-circle shadow-none" type="checkbox" name="remember" id="rememberMe">
+                        <label class="form-check-label" for="rememberMe">Remember me</label>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <button class="btn btn-sm w-100" name="submit" type="submit">Se connecter</button>
+                      <button class="btn btn-sm w-100 d-none loading-btn" type="button" disabled>
+                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                        <span class="">Loading...</span>
+                      </button>
+                    </div>
+                    
+                    <div class="col-12">
+                      <p class="small mb-0">Vous n'avez pas de compte? </br> <a href="/register">Créer un compte</a></p>
+                    </div>
+                  </form>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    </section>
+</div>

@@ -1,0 +1,90 @@
+<div id="item-main" class="">
+  <div class="container align-items-center justify-content-center pt-3 ">
+    <div class="row mb-3 align-items-center justify-content-center">
+      <div class="col-11 col-lg-11 col-sm-12 page-intro">
+        <div class="row">
+          <div class="col-md-8">
+            <p class="item-home-first">SPRING </p>
+            <P class="item-home-intro">NORRECHEL FULL BUSINESS</P>
+            <p class="item-home-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem minima ipsa quos velit eligendi natus laborum porro accusamus eos molestiae.</p>
+          </div>
+        </div>
+        <div class="row delivery-info d-none d-lg-flex">
+          <div class="col-md-4 text-light text-center delivery  d-none d-lg-block">
+            <h1>Livraison</h1>                
+            <p>
+              <em>20 Jours pour les articles exportés de l'étrangé.</em>
+            </p>
+          </div>
+          <div class="col-md-4 text-light text-center quality  d-none d-lg-block">
+            <h1>Qualité</h1>
+              <p>
+                <i>Nos produits sont originaux et de bonne qualités.</i><br> 
+              </p>
+          </div>
+          <div class="col-md-4 text-light text-center other  d-none d-lg-block">
+              <h1>Livraison</h1>
+              <p>
+                <i>Livraison est toujours fait à domicile.</i>
+              </p>
+            </div>
+          </div>
+      </div>
+    </div>
+    <!-- item list contents -->
+    <div class="row justify-content-center">
+      <div class="col-lg-2 d-none d-lg-block me-1 p-0">
+        <div class=" bg-white">
+          <div class="categories-container">
+            <h1 class=" text-small py-2 text-center">CATEGORIES</h1>
+            <div class="categories-contents ">
+              <ul>
+                <li class=""><i class="bx bx-chevron-right"></i> <a href="/">Tout</a></li>
+                <% for(let i in categories) {%>
+                  <% if (categories[i]._id == category._id) { %>
+                    <li class="active"><i class="bx bx-chevron-right"></i> <a href="/category/<%= categories[i]._id %>"><%=categories[i].name%></a></li>
+                  <% } else {%>
+                    <li class=""><i class="bx bx-chevron-right"></i> <a href="/category/<%= categories[i]._id %>"><%=categories[i].name%></a></li>
+                  <% } %>
+                <%}%>
+                
+              </ul>
+            </div>
+          </div>              
+        </div>
+      </div>
+      <div class="col-lg-9 col-sm-12 items-list">
+        <div class="row mb-2 bg-white">
+          <header class="items-list-header m-0">
+            <h4 class="">Nouveaux articles</h4>
+            <hr class="p-0">
+          </header> 
+          <div class="row">
+              <% for(let i in items) {%>
+                <div class="col-md-3 col-sm-6 gap-0 col-xs-6 mb-3">
+                  <a href="/item/<%=items[i]._id%>" class="p-2">
+                    <div class="card px-1 py-2">
+                      <div class="onsale positin-absolute">
+                          <span class="badge rounded-0"><i class="bi bi-arrow-down"></i> <%- items[i].discount %>%</span>
+                      </div>
+                      <img src=".<%=items[i].path%><%-items[i].image%>" class="img-card-top" alt="...">
+                      <div class="card-body p-2">
+                        <p class="item-name"><%- items[i].name %> </p>
+                        <p class="item-price"><%- items[i].price %> USD</p>
+                      </div>
+                    </div>                                 
+                  </a>                     
+                </div>
+              <%}%>
+          </div>           
+        </div>  
+      <div class="row bg-white mb-2">
+      <div class="container p-3"></div>
+    </div>
+    <div class="row bg-white mb-2">
+      <div class="container p-3"></div> 
+    </div>
+  </div>
+</div>
+</div>
+
